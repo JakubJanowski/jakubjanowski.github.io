@@ -1,0 +1,19 @@
+@import "base";
+@import "variables";
+
+a {
+  color: $azure;
+  display: block;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+main {
+  margin: 32px;
+}
+
+.row {
+  margin-bottom: 16px;
+}

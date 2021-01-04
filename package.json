@@ -1,0 +1,37 @@
+{
+  "name": "patryktrajder.com",
+  "version": "1.0.0",
+  "description": "Youtuber's portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "acc": "gulp acc",
+    "dev": "gulp dev",
+    "dist": "gulp dist",
+    "eleventy": "eleventy",
+    "start": "http-server dist",
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakubJanowski/patryktrajder.com.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Jakub Janowski",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JakubJanowski/patryktrajder.com/issues"
+  },
+  "homepage": "https://github.com/JakubJanowski/patryktrajder.com#readme",
+  "private": true,
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "gulp": "^4.0.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "html-minifier": "^4.0.0",
+    "http-server": "^0.12.3"
+  },
+  "dependencies": {}
+}
