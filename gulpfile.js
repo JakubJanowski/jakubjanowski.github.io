@@ -65,7 +65,7 @@ gulp.task("deploy", function () {
       " && git init" +
       " && git add ." +
       ' && git commit -m "deploy"' +
-      " && git remote add origin https://github.com/JakubJanowski/jakubjanowski.com" +
+      " && git remote add origin https://github.com/JakubJanowski/jakubjanowski.github.io" +
       " && git push --force origin main:" +
       deployBranch +
       " && rimraf .git" +
