@@ -1,5 +1,6 @@
 const { spawn } = require("child_process");
 const gulp = require("gulp");
+const readlineSync = require("readline-sync");
 const replace = require("gulp-replace");
 const sass = require("gulp-sass");
 
@@ -33,6 +34,14 @@ function sitemap() {
   return gulp.src("sitemap.xml").pipe(gulp.dest(distDir));
 }
 
+function sitemapReminder(done) {
+  if (readlineSync.keyInYN("Did you update the sitemap?")) {
+    return done();
+  }
+  console.log("Ok, aborting deployment.");
+  process.exit(1);
+}
+
 function styles() {
   return gulp
     .src("src/styles/main.scss")
@@ -56,7 +65,7 @@ gulp.task("deploy", function () {
       " && git init" +
       " && git add ." +
       ' && git commit -m "deploy"' +
-      " && git remote add origin https://github.com/JakubJanowski/jakubjanowski.github.io" +
+      " && git remote add origin https://github.com/JakubJanowski/jakubjanowski.com" +
       " && git push --force origin main:" +
       deployBranch +
       " && rimraf .git" +
@@ -74,5 +83,10 @@ gulp.task("dev", gulp.series("clean", gulp.parallel("assets", "src")));
 
 gulp.task(
   "dist",
-  gulp.series("clean", gulp.parallel("assets", "rootfiles", "src"), "deploy")
+  gulp.series(
+    sitemapReminder,
+    "clean",
+    gulp.parallel("assets", "rootfiles", "src"),
+    "deploy"
+  )
 );
