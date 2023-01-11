@@ -6,11 +6,11 @@
 
 ## General info
 
-This is just my generic portfolio website ([jakubjanowski.com](https://jakubjanowski.com)).
+This is just my generic static portfolio website ([jakubjanowski.com](https://jakubjanowski.com)).
 
 ## Technologies
 
-The website is written in the following languages:
+The website is written using:
 
 - Nunjucks,
 - Sass.
@@ -22,7 +22,7 @@ The following tools are used for compilation:
 
 ## Setup
 
-To run this project, run thw following commands from your command line:
+This project runs on node version 18 and npm version 8. Execute the following commands from your command line:
 
 ```
 # Clone this repository
