@@ -2,7 +2,7 @@ const { spawn } = require("child_process");
 const gulp = require("gulp");
 const readlineSync = require("readline-sync");
 const replace = require("gulp-replace");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 
 const distDir = "dist";
 const deployBranch = "gh-pages";
@@ -61,15 +61,15 @@ gulp.task("clean", function () {
 gulp.task("deploy", function () {
   return spawn(
     "cd " +
-      distDir +
-      " && git init" +
-      " && git add ." +
-      ' && git commit -m "deploy"' +
-      " && git remote add origin https://github.com/JakubJanowski/jakubjanowski.github.io" +
-      " && git push --force origin main:" +
-      deployBranch +
-      " && rimraf .git" +
-      " && cd ..",
+    distDir +
+    " && git init" +
+    " && git add ." +
+    ' && git commit -m "deploy"' +
+    " && git remote add origin https://github.com/JakubJanowski/jakubjanowski.github.io" +
+    " && git push --force origin main:" +
+    deployBranch +
+    " && rimraf .git" +
+    " && cd ..",
     [],
     { shell: true, stdio: "inherit" }
   );
