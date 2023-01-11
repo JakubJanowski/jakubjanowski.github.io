@@ -25,13 +25,12 @@
   "homepage": "https://github.com/JakubJanowski/jakubjanowski.github.io#readme",
   "private": true,
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^1.0.2",
     "gulp": "^4.0.2",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
     "html-minifier": "^4.0.0",
     "http-server": "^0.12.3",
     "readline-sync": "^1.4.10"
-  },
-  "dependencies": {}
+  }
 }
